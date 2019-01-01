@@ -1,0 +1,31 @@
+executables:
+{
+    ttytest = ( ttyComponent )
+}
+
+processes:
+{
+    envVars:
+    {
+        LE_LOG_LEVEL = DEBUG
+    }
+
+    run:
+    {
+        ( ttytest )
+    }
+}
+requires:
+{
+    device:
+    {
+        // read and write access to the UART2 port.
+        [rw]    /dev/ttyHS0   /dev/ttyHS0
+    }
+}
+bindings:
+{
+    ttytest.ttyComponent.le_avdata -> avcService.le_avdata
+}
+
+

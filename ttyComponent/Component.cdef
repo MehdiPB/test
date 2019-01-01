@@ -1,0 +1,11 @@
+requires:
+{
+    api:
+    {
+        airVantage/le_avdata.api
+    }
+}
+sources:
+{
+    testtty.c
+}
